@@ -1,0 +1,22 @@
+<!-- Include Header -->
+<% include ../../partials/head %>
+
+<!-- Include Header -->
+<% include ../../partials/navs/userNav %>
+<% records.forEach(function(row){ %>
+<div class="row">
+    <div class="col-md-3 col-sm-6">
+        <div class="text-center" >
+        Company Name:<%= row.company %><br>
+        <%= row.review %><br>
+        Given By--<%= row.username %>
+        </div>
+    </div>
+ </div>
+ <% }) %>
+ <form method="post" action="/comp">
+     Username:<input type="text" name="username" placeholder="username"><br>
+     Company Name:<input type="text" name="companyname" placeholder="companyname"><br>
+     Review:<input type="text" name="review" placeholder="review"><br>
+     <button type="submit" value="post">Post</button>
+ </form>

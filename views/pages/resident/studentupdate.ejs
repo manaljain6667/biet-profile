@@ -1,0 +1,92 @@
+<!-- Include Header -->
+<% include ../../partials/head %>
+
+<!-- Include Header -->
+<% include ../../partials/navs/userNav %>
+
+<div class="container">
+
+
+
+  <div class="row">
+    <div class="col">
+    </div>
+      <div class="col-6">
+        <h1 class="text-center mb-4">Student Updation</h1>
+        <form method="POST" action="/residentupdate" enctype="multipart/form-data">
+            <% profile.forEach(function(students){ %>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="first_name">First Name</label>
+              <input name="first_name" type="text" class="form-control" value="<%=students.firstName%>" id="first_name" placeholder="First Name">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="last_name">Last Name</label>
+              <input name="last_name" type="text" class="form-control" value="<%=students.lastName%>" id="last_name" placeholder="Last Name">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="email">Email</label>
+              <input name="email" type="email" class="form-control" value="<%=students.localStrategy.email%>" id="email" placeholder="Email">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="contact">Contact</label>
+              <input type="text" class="form-control" name="contact"  value="<%=students.contact%>" id="contact" placeholder="Contact">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="branch">Branch</label>
+              <select class="form-control" name="branch" value="<%=students.branch%>">
+                <option value="IT">IT</option>
+                <option value="CSE">CSE</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="year">Year</label>
+              <input type="text" class="form-control" value="<%=students.year%>" name="year" id="year" placeholder="Year">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="roll">Roll No.</label>
+              <input type="text" class="form-control" name="roll"  value="<%=students.roll%>" id="roll" placeholder="Roll">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="skills">Skills</label>
+              <input type="text" class="form-control"  name="skills" value="<%=students.skills%>" id="skills" placeholder="skills">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="github">Github</label>
+              <input type="text" class="form-control" name="github"  value="<%=students.github%>" id="github" placeholder="Github">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="github">Photo</label>
+              <input type="file" class="form-control"  name="file"  value="<%=students.image%>" id="file" >
+            </div>
+          </div>
+          <input type="hidden"  name="id"  value="<%=students._id%>"  >
+          <% }); %>
+          
+          </div>
+          <button type="submit" class="btn btn-dark btn-block">Update</button>
+        </form>
+      </div>
+    <div class="col">
+  </div>
+  
+</div>
+
+<!-- Include Footer -->
+<% include ../../partials/footer %>

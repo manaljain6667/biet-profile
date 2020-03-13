@@ -1,0 +1,111 @@
+<!-- Include Header -->
+<% include ../../partials/signuphed %>
+
+<!-- Include Header -->
+<% include ../../partials/navs/signupnv %>
+
+<div class="container">
+
+  <% if (guestSignupMessage.length > 0) { %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <%= guestSignupMessage %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  <% } %>
+
+  <div class="row">
+    <div class="col">
+    </div>
+      <div class="col-6">
+        <h1 class="text-center mb-4">Alumnii Registration</h1>
+        <form method="POST" action="/guest/signup" enctype="multipart/form-data">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="first_name">First Name</label>
+              <input name="first_name" type="text" class="form-control" id="first_name" placeholder="First Name">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="last_name">Last Name</label>
+              <input name="last_name" type="text" class="form-control" id="last_name" placeholder="Last Name">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="email">Email</label>
+              <input name="email" type="email" class="form-control" id="email" placeholder="Email">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="contact">Contact</label>
+              <input name="contact" type="text" class="form-control" id="contact" placeholder="Contact">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="branch">Branch</label>
+              <select class="form-control" name="branch">
+                <option value="IT">IT</option>
+                <option value="CSE">CSE</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="year">Year of Passout</label>
+              <input name="year" type="text" class="form-control" id="year" placeholder="Year">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="roll">Roll No.</label>
+              <input name="roll" type="text" class="form-control" id="roll" placeholder="Roll">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="skills">Skills</label>
+              <input name="skills" type="text" class="form-control" id="skills" placeholder="skills">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="github">Github</label>
+              <input name="github" type="text" class="form-control" id="github" placeholder="Github">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="company">Company</label>
+              <input name="company" type="text" class="form-control" id="company" placeholder="Company">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="github">Photo</label>
+              <input name="file" type="file" class="form-control" id="file" >
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="password">Password</label>
+              <input name="password" type="password" class="form-control" id="password" placeholder="Password">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="password_confirm">Confirm Password</label>
+              <input name="password_confirm" type="password" class="form-control" id="password_confirm" placeholder="Confirm Password">
+            </div>
+          </div>
+          
+          </div>
+          <button type="submit" class="btn btn-dark btn-block">Sign Up</button>
+        </form>
+      </div>
+    <div class="col">
+  </div>
+</div>
+
+<!-- Include Footer -->
+<% include ../../partials/footer %>

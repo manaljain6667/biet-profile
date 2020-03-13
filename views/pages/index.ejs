@@ -1,0 +1,178 @@
+<!-- Include Header -->
+<% include ../partials/head %>
+
+<!-- Include Header -->
+<% if (userExists) { %>
+  <% include ../partials/navs/userNav %>
+<% } else { %>
+  <% include ../partials/navs/nav %>
+<% } %>
+
+<% if (doNotAllowSignUp && doNotAllowSignUp.length > 0) { %>
+  <div class="container-fluid">
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <%= doNotAllowSignUp %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </div>
+<% } else %>
+
+<div class="wrapper">
+  <section>
+<h3> Overview </h3></br>
+<p>We at Bundelkhand Institute of Engineering and Technology, feel extremely privileged to have been able to provide manpower resources to drive the country's growth engine. 
+  Since the year 1996, the college has placed 37,500+ students in various companies.
+
+The Placements, both for final jobs and Summer Internships is an integral part of any College’s annual calendar of activities. 
+B.I.E.T. has a well laid-out systematic process of meeting students career aspirations and corporates expectations. The Training and Placement Cell of B.I.E.T. functions as a bridge between the colleges, Industries and Students. 
+The Placement activities are for the students and by the students. The process is transparent and commences with the uploading students profiles on placement portal.
+Each students , faculty coordinators and Training and Placement officials have excess to the portal.
+
+The leading companies from all sectors are invited by the Training and Placement Cell of B.I.E.T. on the campus, where the eligible students are facilitated to go through the entire selection process. 
+The entire process is governed by the student's ability and performance, as well as the requirements and norms of the Industry.
+
+<center><b>Objective</b></center>
+<ul>
+<li>To sharpen the managerial and creative talents inherent in our students. </li>
+<li>To unleash their education in an environment this brings in professional values and inculcates modern attitude</li>
+<li>To develop analytical skills to make key strategic decisions in an increasing complex corporate environment</li>
+<li>To develop the best learning process using a comprehensive understanding of industry's best practices</li>
+<li>To establish long-term relationships with the companies</li>
+<li>To provide 100% placements to our graduates</li>
+</ul>
+</p>
+</section>
+<section>
+    <h3> Hire Talent</h3>
+    <p>
+  
+  </p>
+  </section>
+
+  <section>
+    <h3> Seminar And Workshops</h3>
+    <p>
+  
+  </p>
+  </section>
+
+  <section>
+    <h3>Where Our Alumini Work!</h3>
+  <br/>
+    
+<!--automatic slider-->
+      <p><center><b>Our Recruiters</b></center></p>
+     <div class="w3-content w3-display-container">
+        <center><img class="mySlides" src="/static/homepge/img/1.jpg" style="width:75%  ;height:300px" ></center>
+        <center><img class="mySlides" src="/static/homepge/img/2.jpg" style="width:75%  ;height:300px"></center>
+        <center><img class="mySlides" src="/static/homepge/img/3.jpg" style="width:75%  ;height:300px"></center>
+    <center><img class="mySlides" src="/static/homepge/img/4.jpg" style="width:75%  ;height:300px"></center>
+        
+     </div>
+      <script>
+      var myIndex = 0;
+      carousel();
+
+      function carousel() 
+      {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";  
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}    
+      x[myIndex-1].style.display = "block";  
+      setTimeout(carousel, 2000); // Change image every 2 seconds
+      }
+  </script>
+  </p>
+  </section>
+</div>
+
+<script type="text/javascript" >
+$(function(){
+$(window).scroll(function(){
+  var winTop = $(window).scrollTop();
+  if(winTop >= 30){
+    $("body").addClass("sticky-header");
+  }else{
+    $("body").removeClass("sticky-header");
+  }//if-else
+});//win func.
+});//ready func.
+</script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+<footer class="footer-distributed">
+
+    <div class="footer-left">
+
+      <img src="/static/images/BIET.jpg" alt="Logo" style="width:50px;height:50px;border:0;">
+
+      <p class="footer-links">
+        <a href="#">Home</a>
+        ·
+        <a href="#">About</a>
+        ·
+        <a href="#">Student Portal</a>
+        ·
+        <a href="#">Admin Portal</a>
+        .
+        <a href="#">Alumni Portal</a>
+        ·
+        <a href="#">Company Review</a>
+        ·
+        <a href="#"</a>
+      </p>
+
+      <p class="footer-name">BIET Social Media&copy; 2019</p>
+    </div>
+
+    <div class="footer-center">
+
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p><span></span> Jhansi, India</p>
+      </div>
+
+      <div>
+        <i class="fa fa-phone"></i>
+        <p>+91 988422172</p>
+      </div>
+
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="mailto:support@biet.com">support@biet.com</a></p>
+      </div>
+
+    </div>
+
+    <div class="footer-right">
+
+      <p class="footer-about">
+        <span>About the site</span>
+        This site provides interaction between college students and alumini and also gives chance to companies to hire our talented college students in different areas.
+      </p>
+
+      <div class="footer-icons">
+
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-github"></i></a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
+
+<!-- Include Footer -->
+<!-- <% include ../partials/footer %> -->

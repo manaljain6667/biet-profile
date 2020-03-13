@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<title>User Profile</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+  <link rel = "icon" type = "image/png" href = "/static/user_icon.jpg">
+</head>
+<title>DASHBOARD</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+</style>
+<body class="w3-light-grey">
+  <!------------------------------------------------------- Navbar------------------------------------------------------------------------->
+  <br>
+  <br>
+  <br> 
+  <br>
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="/" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>Home Page</a>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="ALUMNI"><i class="fa fa-globe w3-margin-right"></i>ALUMNI</a>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Account Settings"><i class="fa fa-user w3-margin-right"></i>STUDENT</a>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope w3-margin-right"></i>ADMIN</a>
+  <div class="w3-dropdown-hover w3-hide-small">
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px"> 
+    </div>
+  </div>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
+    <img src="/static/images/BIET.jpg" class="w3-square" style="height:60px;width:60px" alt="Avatar">
+  </a>
+ </div>
+</div>
+
+
+<div class="container">
+
+  <% if (guestSignupMessage.length > 0) { %>
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <%= guestSignupMessage %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+  <% } else %>
+
+  <h1>ALUMNII Dashboard</h1>
+  
+  <div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+    <!-- The Grid -->
+    <div class="w3-row-padding">
+          <!-- Left Column -->
+      <div class="w3-third">
+      
+        <div class="w3-white w3-text-grey w3-card-4">
+          <div class="w3-display-container">
+            <center>
+  
+            <img src="/static/uploads/<%=guestimage%>" width="250px" height="250px" alt="Avatar">
+          </center>
+          <hr>
+            <div class="w3-display-bottomleft w3-container w3-text-black">
+              
+            </div>
+          </div>
+          <center><h5><%=guestFirstName + " " + guestLastName%></h5></center>
+          <hr>
+          <div class="w3-container">
+            <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i><%=guestroll%></p>
+            <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i><%=guestEmail%></p>
+            <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i><%=guestcontact%></p>
+            <p><i class="fa fa-male fa-fw w3-margin-right w3-large w3-text-teal"></i>MALE</p>
+            <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-large w3-text-teal"></i>05-Jan-1999</p>
+  
+            <hr>
+  
+  
+             <br>
+            
+            <div class="w3-light-grey w3-round-xlarge">
+              
+            </div>
+            </div>
+        </div><br>
+  
+      <!-- End Left Column -->
+      </div>
+  
+      <!-- Right Column -->
+      <div class="w3-twothird" >
+      
+        <div class="w3-container w3-card w3-white w3-margin-bottom" style="height: 580px">
+          <h2 class="w3-text-grey w3-padding-16"><i class=" fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>ALUMNII DETAILS</h2>
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b>ALUMNII_ID :<%=guestroll%></b></h5>
+          </div>
+          <br>
+  
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b>YEAR OF PASSOUT:<%=guestyear%></b></h5>
+           </div>
+           <br>
+  
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b>BRANCH :<%=guestbranch%></b></h5>
+           </div>
+           <br>
+  
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b>SKILLS :<%=guestskills%></b></h5>
+          </div>
+          <br>
+           <div class="w3-container">
+            <h5 class="w3-opacity"><b>GITHUB LINK :<%=guestgithub%></b></h5>
+          </div>
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b>COMPANY :<%=guestcompany%></b></h5>
+          </div>
+          <br>
+          <br>
+          <hr>
+          <a href="/guestupdate?id=<%=id%>">Update Details</a>
+        </div>
+       </div>
+    <!-- End Grid -->
+    </div>
+    
+    <!-- End Page Container -->
+  </div>
+  <footer class="w3-container w3-black w3-center w3-margin-top">
+    <p>Find me on social media.</p>
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </footer>
+  
+  </body>
+  </html>
+  

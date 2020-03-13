@@ -1,0 +1,24 @@
+<header>
+  <img src="/static/images/BIET.jpg" class="image">
+  <h2>BIET SOCIAL MEDIA, Jhansi</h2>
+  <nav>
+    <a href="/">Home</a>
+    <a href="#">About</a>
+    <a href="/studentportal">Student Portal</a>
+
+    <a href="/alumniiportal">Alumni Portal</a>
+  
+ 
+  <% if(currentUser.userGroup === 'Guest'){ %>
+    <a href="/company">Company Review</a>
+    <a href="/guest/"> Alumnii Profile</a> 
+
+    <%  }else{ %>
+      <a href="/reviews">View Company Review</a>
+      <a href="/resident/">Student Profile</a>
+      <% } %>
+  
+
+  <a href="/logout" class="btn btn-danger">Logout</a>
+  </nav>
+</header>

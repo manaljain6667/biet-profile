@@ -1,0 +1,17 @@
+<!-- Include Header -->
+<% include ../../partials/head %>
+
+<!-- Include Header -->
+<% include ../../partials/navs/userNav %>
+<% records.forEach(function(row){ %>
+<div class="row">
+    <div class="col-md-3 col-sm-6">
+        <div class="text-center" >
+        Company Name:<%= row.company %><br>
+        <%= row.review %><br>
+        Given By--<%= row.username %>
+        </div>
+    </div>
+ </div>
+ <% }) %>
+ 

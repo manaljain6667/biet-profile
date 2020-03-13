@@ -1,0 +1,149 @@
+<% include ../../partials/head %>
+<link href="static/css/style.css" rel="stylesheet" type="text/css">
+
+<style>
+.name{
+    font-size:20px;
+    text-transform:uppercase;
+    margin-top: 10px;
+    font-family:sans-serif;
+    color:black;
+    text-shadow: 1px 1px green ;
+}</style>
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+    <% include ../../partials/navs/userNav %>
+
+  </header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left: 500px;">
+  <h1 class="name"><b>Alumnii PORTAL</b></h1><br>
+    
+</div>
+<hr>
+  <!-- <div class="row">
+    <%alumnii.forEach(function(alumni){%>
+    <div class="col-md-3 col-sm-6">
+      <div class="text-center" >
+            <div  class="caption">
+              <h5 class="name">Name: <%=alumni.firstName%></h5>
+            </div>
+            <p>
+              <a href="alumniiprofile?id=<%= alumni.id%>" class="btn btn-primary">View Profile</a>
+            </p>
+      </div>
+   </div>
+    <% }); %>
+  </div> -->
+  
+  
+  <!-- <div class="w3-black w3-center w3-padding-24"><a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity"></a></div> -->
+  <section id="team" class="pb-5">
+    <div class="container">
+        <div class="row">
+            <!-- Team member -->
+            <%alumnii.forEach(function(student){%>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="/static/uploads/<%=student.image%>" alt="card image"></p>
+                                    <h4 class="card-title"><%=student.firstName%></h4>
+                                    <p class="card-text">Roll No: <%= student.roll%></p>
+                                            <br><a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-phone-square"></i>
+                                            </a>                                
+								</div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title"></h4>
+                                    <p class="card-text"></p>
+                                    <ul class="list-inline">
+                                          <li class="list-inline-item">
+                                            <a href="alumniiprofile?id=<%= student.id%>" class="btn btn-primary" style="color: black;">View Profile</a>
+                                          </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-skype"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-google"></i>
+                                            </a>
+                                        </li><br><br>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-phone-square"></i>
+                                            </a>
+                                        </li>                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./Team member -->
+            <% }); %>
+        </div>
+    </div>
+</section>
+<!-- End page content -->
+</div>
+
+<script>
+
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+</script>
+
+
+
+</body>
+</html>

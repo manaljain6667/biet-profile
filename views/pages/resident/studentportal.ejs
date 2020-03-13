@@ -1,0 +1,224 @@
+
+
+<% include ../../partials/head %>
+<link href="static/css/style.css" rel="stylesheet" type="text/css">
+<style>
+.name{
+    font-size:20px;
+    text-transform:uppercase;
+    margin-top: 10px;
+    font-family:sans-serif;
+    color:black;
+    text-shadow: 1px 1px green ;
+}</style>
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+    <% include ../../partials/navs/userNav %>
+  </header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left: 500px;">
+  <h1><b>STUDENT PORTAL</b></h1><br>
+    <div class="dropdown">
+      
+      <button class="btn btn-primary" style="height: 40px"><a href="studentportal" style="color: azure;">ALL</a></button>
+      <button onclick="myFunction()" class="dropbtn" style="height: 40px">Third year</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="studentit3portal">IT</a>
+        <a href="studentcs3portal">CSE</a>
+      </div>
+      
+  </div>
+</div>
+<!-- <div class="container">
+  <div class="row">
+    <% if(success !=''){%>
+      <div class="alert alert-success">
+        <strong>Success!</strong> <%= success %>
+      </div>
+      <% } %>
+      <h1>Filter Student Records</h1>
+<div class="col-md-12">
+  <form action="/search/" id="EmployeeForm" class="form-horizontal" method="post"  role="form">
+              
+ <div class="col-md-3">
+    <div class="form-group">
+        <label for="name" class="col-md-12 control-label">By Name</label>
+        <div class="col-md-12">
+            <input type="text" id="searchName" class="form-control" name="fltrname" placeholder="Enter Name">
+        </div>
+    </div>
+ </div>
+ <div class="col-md-3">
+    <div class="form-group">
+        <label for="email" class="col-md-12 control-label">By Year</label>
+        <div class="col-md-12">
+            <input type="text" class="form-control" name="fltremail" placeholder="Enter Year">
+        </div>
+    </div>
+ </div>
+ <div class="col-md-3">
+    <div class="form-group">
+        <label for="email" class="col-md-12 control-label">By Branch</label>
+        <div class="col-md-12">
+            <select class="form-control" name="fltremptype" style="height: 35px;">
+                <option value="IT">IT</option>
+                <option value="CSE">CSE</option>
+              </select></div>
+    </div>
+ </div>
+ <div class="col-md-3">
+    <div class="form-group">
+        <label for="email" class="col-md-12 control-label">&nbsp;</label>
+       
+         <div class="col-md-12">
+            <input type="submit" class="form-control btn btn-primary" name="submit" placeholder="Filter">
+        </div>
+    </div>
+ </div>
+</form>
+</div>
+    </div>
+  </div> -->
+
+<hr>
+  <!-- <div class="row">
+    <%students.forEach(function(student){%>
+    <div class="col-md-3 col-sm-6">
+      <div class="text-center" >
+            <div  class="caption">
+              <h5 class="name">Name: <%=student.firstName%></h5>
+              <h3 class="name">Roll No: <%= student.roll%></h3>
+            </div>
+            <p>
+              <a href="studentprofile?id=<%= student.id%>" class="btn btn-primary">View Profile</a>
+            </p>
+      </div>
+   </div>
+    <% }); %>
+  </div> -->
+  <!-- <div class="row">
+    <%students.forEach(function(student){%>
+  <div class="card" style="width:200px">
+    <img class="card-img-top" src="/static/uploads/<%=student.image%>" alt="Card image">
+    <div class="card-body" class="caption">
+      <h4 class="card-title" class="name"><%=student.firstName%></h4>
+      <h3 class="card-title" class="name">Roll No: <%= student.roll%></h3>
+      <p class="card-text">Some example text.</p>
+      <a href="studentprofile?id=<%= student.id%>" class="btn btn-primary">View Profile</a>
+    </div>
+  </div>
+  <% }); %>
+  </div> -->
+  
+  <!-- <div class="w3-black w3-center w3-padding-24"><a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity"></a></div> -->
+  <section id="team" class="pb-5">
+    <div class="container">
+        <div class="row">
+            <!-- Team member -->
+            <%if(students.length > 0) {%>
+            <%students.forEach(function(student){%>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="/static/uploads/<%=student.image%>" alt="card image"></p>
+                                    <h4 class="card-title"><%=student.firstName%></h4>
+                                    <p class="card-text">Roll No: <%= student.roll%></p>
+                                            <br><a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-phone-square"></i>
+                                            </a>                                
+								</div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title"></h4>
+                                    <p class="card-text"></p>
+                                    <ul class="list-inline">
+                                          <li class="list-inline-item">
+                                            <a href="studentprofile?id=<%= student.id%>" class="btn btn-primary">View Profile</a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-skype"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-google"></i>
+                                            </a>
+                                        </li><br><br>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-phone-square"></i>
+                                            </a>
+                                        </li>                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./Team member -->
+            <% })}else{ %>
+                  <h3 colspan="6">No Record Found</h3>
+              <% } %>
+        </div>
+    </div>
+</section>
+<!-- End page content -->
+
+<script>
+
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+</script>
+
+
+
+</body>
+</html>
